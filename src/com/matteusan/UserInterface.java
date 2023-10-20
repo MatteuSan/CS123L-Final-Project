@@ -2,19 +2,20 @@ package com.matteusan;
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.text.DecimalFormat;
 import java.util.Objects;
 
 /**
  * @author Matthew Hernandez
  */
 public final class UserInterface extends JFrame {
-    private JPanel root, content, search, information, div1, price, size;
+    private JPanel root, content, search, information, div1, price, size, houseType;
     private JPanel selectField1, formField1, formField2, selectField2;
     private JScrollPane results;
     private JComboBox blockComboBox, houseTypeComboBox;
     private JTextField sizeTextField, priceTextField;
-    private JButton searchButton;
-    private JLabel lotNumberDisplay, blockDisplay, priceDisplay, sizeDisplay, reservedIndicator, soldIndicator;
+    private JButton searchButton, clearFilterButton;
+    private JLabel lotNumberDisplay, blockDisplay, priceDisplay, sizeDisplay, houseTypeDisplay, reservedIndicator, soldIndicator;
     private JButton buyButton, reserveButton;
     private JTable resultsTable;
 
@@ -28,6 +29,17 @@ public final class UserInterface extends JFrame {
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                filterTable();
+            }
+        });
+
+        clearFilterButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                blockComboBox.setSelectedIndex(0);
+                sizeTextField.setText("");
+                priceTextField.setText("");
+                houseTypeComboBox.setSelectedIndex(0);
                 filterTable();
             }
         });
@@ -72,10 +84,13 @@ public final class UserInterface extends JFrame {
                 int row = resultsTable.getSelectedRow();
                 // System.out.println(row); // For debugging
                 if (row != -1) {
+                    DecimalFormat formatter = new DecimalFormat("#,###.00");
+
                     lotNumberDisplay.setText("Lot " + resultsTable.getValueAt(row, 0).toString());
-                    blockDisplay.setText("(Block " + resultsTable.getValueAt(row, 1).toString() + ")");
-                    priceDisplay.setText("PHP" + resultsTable.getValueAt(row, 4).toString() + ".00");
+                    blockDisplay.setText("(" + resultsTable.getValueAt(row, 1).toString() + ")");
+                    priceDisplay.setText("PHP" + formatter.format(resultsTable.getValueAt(row, 4)));
                     sizeDisplay.setText(resultsTable.getValueAt(row, 2).toString() + "sq/m");
+                    houseTypeDisplay.setText(resultsTable.getValueAt(row, 3).toString());
 
                     soldIndicator.setVisible(resultsTable.getValueAt(row, 5).toString().equals("Sold"));
                     reservedIndicator.setVisible(resultsTable.getValueAt(row, 5).toString().equals("Reserved"));
@@ -97,7 +112,7 @@ public final class UserInterface extends JFrame {
                     if (choice == JOptionPane.YES_OPTION) {
                         if (!Objects.equals(status, "Sold") && !Objects.equals(status, "Reserved")) {
                             JOptionPane.showMessageDialog(null, "Lot " + resultsTable.getValueAt(row, 0).toString() + " has been purchased.", "Purchase Successful", JOptionPane.INFORMATION_MESSAGE);
-                            data.updateRow(row, 5, "Sold");
+                            resultsTable.setValueAt("Sold", row, 5);
                             soldIndicator.setVisible(true);
                         } else {
                             JOptionPane.showMessageDialog(null, "Lot " + resultsTable.getValueAt(row, 0).toString() + " is already " + status.toLowerCase() + ".", "Purchase Failed", JOptionPane.ERROR_MESSAGE);
@@ -117,7 +132,7 @@ public final class UserInterface extends JFrame {
                     if (choice == JOptionPane.YES_OPTION) {
                         if (!Objects.equals(status, "Sold") && !Objects.equals(status, "Reserved")) {
                             JOptionPane.showMessageDialog(null, "Lot " + resultsTable.getValueAt(row, 0).toString() + " has been reserved.", "Reservation Successful", JOptionPane.INFORMATION_MESSAGE);
-                            data.updateRow(row, 5, "Reserved");
+                            resultsTable.setValueAt("Reserved", row, 5);
                             reservedIndicator.setVisible(true);
                         } else {
                             JOptionPane.showMessageDialog(null, "Lot " + resultsTable.getValueAt(row, 0).toString() + " is already " + status.toLowerCase() + ".", "Reservation Failed", JOptionPane.ERROR_MESSAGE);

@@ -1,7 +1,6 @@
 package com.matteusan;
 
-import com.matteusan.houses.*;
-import com.matteusan.utils.DataUtilities;
+import com.matteusan.utils.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -71,7 +70,6 @@ public final class Data {
         if (!Objects.equals(sizeQuery, "") && !Objects.isNull(sizeQuery)) filters.add(filterBySize(sizeQuery));
         if (!Objects.equals(priceQuery, "") && !Objects.isNull(priceQuery)) filters.add(filterByPrice(priceQuery));
         if (!Objects.equals(houseTypeQuery, "None")) filters.add(filterByHouseType(houseTypeQuery));
-
 
         referenceTableSorter.setRowFilter(RowFilter.andFilter(filters));
     }
