@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.matteusan.UserInterface">
+  <grid id="27dc6" binding="root" layout-manager="BorderLayout" hgap="0" vgap="10">
+    <constraints>
+      <xy x="20" y="20" width="592" height="425"/>
+    </constraints>
+    <properties>
+      <enabled value="true"/>
+      <font name="Arial" size="14" style="0"/>
+      <foreground color="-1884858"/>
+    </properties>
+    <border type="empty">
+      <font size="18" style="1"/>
+      <title-color color="-16777216"/>
+      <size top="20" left="20" bottom="20" right="20"/>
+      <color color="-64512"/>
+    </border>
+    <children>
+      <grid id="dba7f" binding="content" layout-manager="BorderLayout" hgap="0" vgap="20">
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none">
+          <size top="10" left="10" bottom="10" right="10"/>
+        </border>
+        <children>
+          <grid id="83c80" binding="search" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints border-constraint="North"/>
+            <properties/>
+            <border type="none">
+              <title-color color="-1842205"/>
+            </border>
+            <children>
+              <grid id="5616e" binding="selectField1" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="9257" class="javax.swing.JLabel">
+                    <constraints border-constraint="North"/>
+                    <properties>
+                      <labelFor value="6f8c0"/>
+                      <text value="Block"/>
+                    </properties>
+                  </component>
+                  <component id="6f8c0" class="javax.swing.JComboBox" binding="blockComboBox" default-binding="true">
+                    <constraints border-constraint="Center"/>
+                    <properties>
+                      <enabled value="true"/>
+                      <font size="16"/>
+                      <model>
+                        <item value="None"/>
+                        <item value="Block A"/>
+                        <item value="Block B"/>
+                        <item value="Block C"/>
+                        <item value="Block D"/>
+                        <item value="Block E"/>
+                      </model>
+                      <toolTipText value="Select block number"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="9b0d3" binding="formField1" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="56dda" class="javax.swing.JLabel">
+                    <constraints border-constraint="North"/>
+                    <properties>
+                      <labelFor value="a47e2"/>
+                      <text value="Size"/>
+                    </properties>
+                  </component>
+                  <component id="a47e2" class="javax.swing.JTextField" binding="sizeTextField">
+                    <constraints border-constraint="Center"/>
+                    <properties>
+                      <columns value="10"/>
+                      <font size="16"/>
+                      <text value=""/>
+                      <toolTipText value="Enter size in sq/m"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="38e71" binding="formField2" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="ba605" class="javax.swing.JLabel">
+                    <constraints border-constraint="North"/>
+                    <properties>
+                      <labelFor value="a47e2"/>
+                      <text value="Price"/>
+                    </properties>
+                  </component>
+                  <component id="b7b7a" class="javax.swing.JTextField" binding="priceTextField">
+                    <constraints border-constraint="Center"/>
+                    <properties>
+                      <columns value="10"/>
+                      <font size="16"/>
+                      <text value=""/>
+                      <toolTipText value="Enter size in sq/m"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <grid id="e33d0" binding="selectField2" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="ee784" class="javax.swing.JLabel">
+                    <constraints border-constraint="North"/>
+                    <properties>
+                      <labelFor value="20978"/>
+                      <text value="House Type"/>
+                    </properties>
+                  </component>
+                  <component id="20978" class="javax.swing.JComboBox" binding="houseTypeComboBox">
+                    <constraints border-constraint="Center"/>
+                    <properties>
+                      <font size="16"/>
+                      <model>
+                        <item value="None"/>
+                        <item value="Bungalow"/>
+                        <item value="Cottage"/>
+                        <item value="Contemporary"/>
+                        <item value="Victorian"/>
+                        <item value="Duplex"/>
+                        <item value="Pueblo"/>
+                      </model>
+                      <toolTipText value="Select house type"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+              <component id="4071f" class="javax.swing.JButton" binding="searchButton">
+                <constraints/>
+                <properties>
+                  <font size="16" style="1"/>
+                  <horizontalAlignment value="0"/>
+                  <text value="Search"/>
+                  <verticalAlignment value="0"/>
+                  <verticalTextPosition value="0"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="3d5df" binding="information" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints border-constraint="South"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <grid id="e1889" binding="div1" layout-manager="BorderLayout" hgap="0" vgap="10">
+                <constraints border-constraint="Center"/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <grid id="259e1" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="2">
+                    <constraints border-constraint="South"/>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="57084" class="javax.swing.JLabel" binding="reservedIndicator">
+                        <constraints/>
+                        <properties>
+                          <enabled value="true"/>
+                          <font style="1"/>
+                          <text value="This lot is already reserved" noi18n="true"/>
+                        </properties>
+                      </component>
+                      <component id="3f064" class="javax.swing.JLabel" binding="soldIndicator">
+                        <constraints/>
+                        <properties>
+                          <enabled value="true"/>
+                          <font style="1"/>
+                          <text value="This lot is already sold" noi18n="true"/>
+                        </properties>
+                      </component>
+                      <grid id="891ea" layout-manager="BorderLayout" hgap="0" vgap="0">
+                        <constraints/>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <grid id="af69f" layout-manager="FlowLayout" hgap="5" vgap="0" flow-align="1">
+                            <constraints border-constraint="Center"/>
+                            <properties/>
+                            <border type="none">
+                              <font/>
+                              <title-color color="-1842205"/>
+                            </border>
+                            <children>
+                              <component id="1474" class="javax.swing.JButton" binding="buyButton">
+                                <constraints/>
+                                <properties>
+                                  <enabled value="false"/>
+                                  <text value="Buy"/>
+                                </properties>
+                              </component>
+                              <component id="ac4f2" class="javax.swing.JButton" binding="reserveButton">
+                                <constraints/>
+                                <properties>
+                                  <enabled value="false"/>
+                                  <text value="Reserve"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
+                  <grid id="8c7e5" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                    <constraints border-constraint="Center"/>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <grid id="9a53e" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                        <constraints/>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="8682b" class="javax.swing.JLabel" binding="lotNumberDisplay">
+                            <constraints/>
+                            <properties>
+                              <enabled value="true"/>
+                              <font size="20" style="1"/>
+                              <text value="Lot #_____"/>
+                            </properties>
+                          </component>
+                          <component id="4ee2c" class="javax.swing.JLabel" binding="blockDisplay">
+                            <constraints/>
+                            <properties>
+                              <enabled value="true"/>
+                              <font size="12" style="0"/>
+                              <text value="(Block __)"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <grid id="2b8e9" layout-manager="FlowLayout" hgap="15" vgap="0" flow-align="1">
+                        <constraints/>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <grid id="a7b7d" binding="price" layout-manager="BorderLayout" hgap="0" vgap="0">
+                            <constraints/>
+                            <properties/>
+                            <border type="none">
+                              <title-color color="-1842205"/>
+                            </border>
+                            <children>
+                              <component id="78a8" class="javax.swing.JLabel">
+                                <constraints border-constraint="Center"/>
+                                <properties>
+                                  <text value="Price"/>
+                                </properties>
+                              </component>
+                              <component id="aee9" class="javax.swing.JLabel" binding="priceDisplay">
+                                <constraints border-constraint="South"/>
+                                <properties>
+                                  <font size="24" style="1"/>
+                                  <text value="PHP0.00"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <grid id="20aac" binding="size" layout-manager="BorderLayout" hgap="0" vgap="0">
+                            <constraints/>
+                            <properties/>
+                            <border type="none"/>
+                            <children>
+                              <component id="32b5a" class="javax.swing.JLabel">
+                                <constraints border-constraint="Center"/>
+                                <properties>
+                                  <text value="Size"/>
+                                </properties>
+                              </component>
+                              <component id="dd5b4" class="javax.swing.JLabel" binding="sizeDisplay">
+                                <constraints border-constraint="South"/>
+                                <properties>
+                                  <font size="24" style="1"/>
+                                  <text value="0sq/m"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+            </children>
+          </grid>
+          <scrollpane id="a6251" binding="results">
+            <constraints border-constraint="Center"/>
+            <properties/>
+            <border type="etched" title="Results" title-justification="2" title-position="2">
+              <font size="16" style="1"/>
+            </border>
+            <children>
+              <component id="116dd" class="javax.swing.JTable" binding="resultsTable">
+                <constraints/>
+                <properties/>
+              </component>
+            </children>
+          </scrollpane>
+        </children>
+      </grid>
+      <component id="25660" class="javax.swing.JLabel">
+        <constraints border-constraint="North"/>
+        <properties>
+          <font size="24" style="1"/>
+          <text value="Real Estate Management System"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
